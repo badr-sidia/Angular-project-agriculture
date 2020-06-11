@@ -1,0 +1,83 @@
+
+<!--<div id="slides-shop" >
+  <ul class="slides-container">
+      <li class="text-center">
+          <img src="assets/images1/banner-01.jpg" alt="">
+         
+      </li>
+      
+  </ul>
+  
+</div>-->
+<!--<div class="main-pane">
+  <h1 class="text-center"></h1>
+  <div class="part-grid">
+    
+    <div class="part" (click)="onNavigate('part-three')">
+      <h1>Services</h1>
+    </div>
+    <div class="part" (click)="onNavigate('part-four')">
+      <h1>Shop</h1>
+    </div>
+  </div>
+</div>-->
+<div  style="margin-top: 30px; margin-block-end: 30px;margin-left: 30px;margin-right: 30px;"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px">
+     
+     <mat-card class="part" (click)="onNavigate('part-three')" *ngIf="service" fxFlex >
+      <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title>
+          <a class="btn" (click)="onNavigate('part-three')"><h3>Our services</h3></a>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src={{service.image}} alt={{service.name}}>
+      <mat-card-content>
+          <p>{{service.type}}</p>
+        
+      </mat-card-content>
+    </mat-card>
+    <div [hidden]="thing">
+      <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+    </div>
+     <mat-card class="part" (click)="onNavigate('part-three')" *ngIf="thing" fxFlex>
+      <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title>
+          <a class="btn" (click)="onNavigate('part-four')"><h3>Start your shop </h3></a>
+
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src={{thing.imageUrl}} alt={{thing.title}}>
+      <mat-card-content>
+          <p>{{thing.type}}</p>
+        <p>{{thing.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <div [hidden]="thing">
+      <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+    </div>
+<mat-card class="part" (click)="onNavigate('part-three')" *ngIf="employee" fxFlex>
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title >
+        <h3 >{{employee.name | uppercase}} {{employee.abbr | uppercase}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src={{employee.image}} alt={{employee.name}}>
+    <mat-card-content>
+        <p>{{employee.designation}}</p>
+      <p>{{employee.description}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <div [hidden]="employee">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+
+</div>

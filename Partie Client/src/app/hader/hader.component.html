@@ -1,0 +1,97 @@
+<header class="main-header">
+    <!-- Start Navigation -->
+    <!--<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+        <div class="container">
+        
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+                <a class="navbar-brand" href="index.html"><img src="assets/images1/logo.png" class="logo" alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link " data-toggle="dropdown">SHOP</a>
+                        <ul class="dropdown-menu">
+            <li><a href="shop.html">Sidebar Shop</a></li>
+            <li><a href="shop-detail.html">Shop Detail</a></li>
+                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="my-account.html">My Account</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                    <li class="nav-item" *ngIf="(part >= 3 && isAuth)">
+                        <a class="nav-link" style="cursor: pointer" (click)="onLogout()">DECONNEXION</a>
+                      </li>
+                      <li class="nav-item" *ngIf="(part >= 3 && !isAuth)">
+                        <a class="nav-link" routerLink="/{{ partString }}/auth/login" routerLinkActive="active">CONNEXION</a>
+                      </li>
+                </ul>
+            </div>
+            <div class="attr-nav">
+                <ul>
+                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                    <li class="side-menu">
+          <a href="#">
+            <i class="fa fa-shopping-bag"></i>
+            <span class="badge">3</span>
+            <p>My Cart</p>
+          </a>
+        </li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="side">
+            <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+            <li class="cart-box">
+                <ul class="cart-list">
+                    <li>
+                        <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                        <h6><a href="#">Delica omtantur </a></h6>
+                        <p>1x - <span class="price">$80.00</span></p>
+                    </li>
+                   
+                </ul>
+            </li>
+        </div>
+        
+    </nav>-->
+    <mat-toolbar color="primary">
+        <span><img src="assets/images1/logo.png" height=30 width=41></span>
+        <a mat-button routerLink="/home" routerLinkActive="active"><span class="fa fa-home fa-lg"></span> Home</a>
+        <a mat-button routerLink="/part-four/all-stuff/aboutus"><span class="fa fa-info fa-lg"></span> About</a>
+        <a mat-button routerLink="/part-four/all-stuff/" *ngIf="part >= 3 && isAuth"><span class="fa fa-list fa-lg"></span>Shop</a>
+        <a mat-button routerLink="/part-four/all-stuff/cart" *ngIf="part >= 3 && isAuth"><span class="fa fa-list fa-lg"></span>Cart</a>
+        <a mat-button routerLink="/part-four/all-stuff/mail"><span class="fa fa-address-card fa-lg"></span> Contact</a>
+        <span class="flex-spacer"></span>
+      <a mat-button (click)="openLoginForm()" *ngIf="!isAuth"><span class="fa fa-sign-in fa-lg"></span> Login</a>
+      <a mat-button (click)="onLogout()" *ngIf="isAuth"><span class="fa fa-sign-in fa-lg"></span> Deconnexion</a>
+      </mat-toolbar>
+    <!-- End Navigation -->
+  </header>
+  <div class="jumbotron"
+      fxLayout="row"
+      fxLayout.sm="column" 
+      fxLayout.xs="column" 
+      fxLayoutAlign.xs="start center"
+      fxLayoutAlign.sm="start center" 
+      fxLayoutAlign.gt-sm="center center" 
+      fxLayoutGap="10px">
+  
+    <div fxFlex fxFlex.gt-sm="50%">
+      <h1>Badr Sidia Com Farmer</h1>
+      <p>We take inspiration from the World's best vegetables and fruits, and create a unique fusion experience. Our services creations
+        will tickle your culinary senses!</p>
+    </div>
+    <div fxFlex fxFlex.gt-sm="20%">
+      <img src="assets/images1/logo.png" alt="Logo">
+    </div>
+    <div fxFlex></div>
+  </div>

@@ -1,0 +1,21 @@
+<div *ngIf="!loading" class="col-sm-6 offset-sm-3 mt-2">
+    <form [formGroup]="thingForm">
+      <div class="form-group">
+        <label for="title">Titre</label>
+        <input type="text" placeholder="Quel outil voulez-vous ?" id="title" formControlName="title" class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="title">Type</label>
+          <input type="text" placeholder="Type ?" id="title" formControlName="type" class="form-control">
+        </div>  
+      <button class="btn btn-success" type="button" (click)="filePicker.click()">Ajouter image</button>
+      <input type="file" #filePicker (change)="onImagePick($event)">
+      <div class="image-preview" *ngIf="imagePreview">
+        <img [src]="imagePreview" alt="">
+      </div>
+     
+      <input type="hidden"  value="{{localStorage.getItem('userId')}}" formControlName="userId" class="form-control"><br>
+      <button class="btn btn-primary" (click)="onSubmit()" [disabled]="thingForm.invalid">Valider</button>
+      <p class="alert-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+    </form>
+  </div>

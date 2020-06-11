@@ -1,0 +1,36 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div *ngIf="!loading" class="col-sm-6 offset-sm-3 mt-2" style="margin-top:20px;margin-bottom:20px">
+  <form [formGroup]="thingForm">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input type="text" placeholder="Quel outil voulez-vous ?" id="title" formControlName="title" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="type">Type</label>
+        <input type="text" placeholder="" id="type" formControlName="type" class="form-control">
+      </div>
+    <div class="form-group">
+        <label for="title">Nombre d'heures</label>
+        <input type="text" placeholder="Combien d'heures durent le service ?" id="title" formControlName="title" class="form-control">
+      </div>
+    <button class="btn btn-success" type="button" (click)="filePicker.click()">Ajouter image</button>
+    <input type="file" #filePicker (change)="onImagePick($event)">
+    <div class="image-preview" *ngIf="imagePreview">
+      <img [src]="imagePreview" alt="">
+    </div>
+   
+    <div class="form-group">
+      <label for="type">Votre adresse</label>
+      <select id="type"  [(ngModel)]='nrSelect' formControlName="type" class="form-control"  >
+        <option value="Vegetable" >Sousse</option>
+        <option value="Fruit">Monastir</option>
+      </select>
+    </div>
+   
+    
+    <input type="hidden"  value="{{localStorage.getItem('userId')}}" formControlName="userId" class="form-control">
+    <button class="btn btn-primary" (click)="onSubmit()" [disabled]="thingForm.invalid">Valider</button>
+    <p class="alert-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+</div>
+

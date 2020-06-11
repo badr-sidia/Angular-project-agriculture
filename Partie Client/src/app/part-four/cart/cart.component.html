@@ -1,0 +1,209 @@
+<header class="main-header">
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+        <div class="container">
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="shop.html">Sidebar Shop</a></li>
+                            <li><a href="shop-detail.html">Shop Detail</a></li>
+                            <li><a routerLink="/part-four/all-stuff/cart">Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="my-account.html">My Account</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+            <!-- Start Atribute Navigation -->
+            <div class="attr-nav">
+                <ul>
+                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                    <li class="side-menu">
+                        <a class="btn">
+                            <i class="fa fa-shopping-bag"></i>
+                            
+                            <span class="badge" onclick="openNav()">3</span>
+                            <p>My Cart</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- End Atribute Navigation -->
+        </div>
+        <!-- Start Side Menu -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <li class="cart-box">
+                <ul class="cart-list">
+                    <li *ngFor="let thing of stuff ;let i of index">
+                        <a href="#" class="photo"><img [src]="thing.imageUrl" class="cart-thumb" alt="" /></a>
+                        <h6><a href="#">{{thing.title}} </a></h6>
+                        <p>1x - <span class="price">{{thing.price}}</span></p>
+                    </li>
+                    
+                    <li class="total">
+                        <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                        <span class="float-right"><strong>Total</strong>: $180.00</span>
+                    </li>
+                </ul>
+            </li>
+          </div>
+        <!-- End Side Menu -->
+    </nav>
+    <!-- End Navigation -->
+</header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+<!-- End Top Search -->
+
+<!-- Start All Title Box -->
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Cart</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                    <li class="breadcrumb-item active">Cart</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End All Title Box -->
+
+<!-- Start Cart  -->
+<div class="cart-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-main table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Images</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Add Cart</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let thing of stuff ; let i = index" >
+                                <td class="thumbnail-img">
+                                    <a >
+                                <img class="img-fluid" [src]="stuff[i].imageUrl" alt="" />
+                            </a>
+                                </td>
+                                <td class="name-pr">
+                                    <a >
+                                {{stuff[i].description}}
+                            </a>
+                                </td>
+                                <td class="price-pr">
+                                    <p>{{stuff[i].price}}</p>
+                                </td>
+                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text" [(ngModel)]="carts[i].quantite"></td>
+                                <td class="total-pr">
+                                    <p >{{(stuff[i].price)*(carts[i].quantite)}}</p>
+                                </td>
+                                <td class="remove-pr">
+                                    <a >
+                                <i class="fas fa-edit" (click)="onSubmit(carts[i])"></i>
+                            </a>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-lg-6 col-sm-6">
+                <div class="coupon-box">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
+                        <div class="input-group-append">
+                            <button class="btn btn-theme" type="button">Apply Coupon</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="update-box">
+                    <input value="Update Cart" type="submit">
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-lg-8 col-sm-12"></div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="order-box">
+                    <h3>Order summary</h3>
+                    <div class="d-flex">
+                        <h4>Sub Total</h4>
+                        <div class="ml-auto font-weight-bold"> $ 130 </div>
+                    </div>
+                    <div class="d-flex">
+                        <h4>Discount</h4>
+                        <div class="ml-auto font-weight-bold"> $ 40 </div>
+                    </div>
+                    <hr class="my-1">
+                    <div class="d-flex">
+                        <h4>Coupon Discount</h4>
+                        <div class="ml-auto font-weight-bold"> $ 10 </div>
+                    </div>
+                    <div class="d-flex">
+                        <h4>Tax</h4>
+                        <div class="ml-auto font-weight-bold"> $ 2 </div>
+                    </div>
+                    <div class="d-flex">
+                        <h4>Shipping Cost</h4>
+                        <div class="ml-auto font-weight-bold"> Free </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex gr-total">
+                        <h5>Grand Total</h5>
+                        <div class="ml-auto h5"> $ 388 </div>
+                    </div>
+                    <hr> </div>
+            </div>
+            <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> </div>
+        </div>
+
+    </div>
+</div>

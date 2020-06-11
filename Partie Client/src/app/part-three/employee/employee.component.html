@@ -1,0 +1,48 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div *ngIf="!loading" class="col-sm-6 offset-sm-3 mt-2">
+  <p>{{ thingForm.value | json }} {{ thingForm.status | json }}</p>
+  <form [formGroup]="thingForm">
+    <div class="form-group">
+      <label for="title">Name</label>
+      <input type="text" placeholder="Employee Name" id="title" formControlName="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="title">id_service</label>
+        <input type="text" placeholder="idservice ?" id="title" formControlName="id_service" class="form-control">
+      </div>
+     
+    <div class="form-group">
+        <label for="title">Designation</label>
+        <input type="text" placeholder="Designation ?" id="title" formControlName="designation" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="title">Abbr</label>
+        <input type="text" placeholder="Abbr ?" id="title" formControlName="abbr" class="form-control">
+      </div>
+      <div class="form-group">
+        
+          <mat-slide-toggle formControlName="featured">Featured</mat-slide-toggle>
+      </div>
+      <div class="form-group">
+        <label for="title">Description</label>
+        <input type="text" placeholder="Description ?" id="title" formControlName="description" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="title">Email</label>
+        <input type="text" placeholder="Your email ?" id="title" formControlName="email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="title">Mot de passe</label>
+        <input type="password" placeholder="Your password ?" id="title" formControlName="mdp" class="form-control">
+      </div>
+      
+    <button class="btn btn-success" type="button" (click)="filePicker.click()">Ajouter image</button>
+    <input type="file" #filePicker (change)="onImagePick($event)">
+    <div class="image-preview" *ngIf="imagePreview">
+      <img [src]="imagePreview" alt="">
+    </div>
+    <button class="btn btn-primary" (click)="onSubmit()" >Valider</button>
+    <p class="alert-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+</div>
+

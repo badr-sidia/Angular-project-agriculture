@@ -1,0 +1,105 @@
+<button [routerLink]="['/home/optionService',id]" mat-raised-button color="primary">Add new Option service</button>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef> Image </th>
+            <td mat-cell *matCellDef="let element"> {{element.image}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="id_service">
+            <th mat-header-cell *matHeaderCellDef> Id_service </th>
+            <td mat-cell *matCellDef="let element"> {{element.id_service}} </td>
+        </ng-container>
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>
+              Action
+            </th>
+            <mat-cell *matCellDef="let row">
+              <button mat-icon-button>
+                <mat-icon>edit</mat-icon>
+              </button>
+        <button mat-icon-button >
+                <mat-icon>delete</mat-icon>
+              </button>
+              </mat-cell>
+          </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <br>
+    <hr>
+    <button [routerLink]="['/home/new employee',id]" mat-raised-button color="primary">Add new Employee</button>
+    <table mat-table [dataSource]="dataEmp">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="designation">
+            <th mat-header-cell *matHeaderCellDef> designation </th>
+            <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+        </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef> Image </th>
+            <td mat-cell *matCellDef="let element"> {{element.image}} </td>
+        </ng-container>
+        <ng-container matColumnDef="abbr">
+            <th mat-header-cell *matHeaderCellDef> Abbr </th>
+            <td mat-cell *matCellDef="let element"> {{element.abbr}} </td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+        
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="id_service">
+            <th mat-header-cell *matHeaderCellDef> Id_service </th>
+            <td mat-cell *matCellDef="let element"> {{element.id_service}} </td>
+        </ng-container>
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>
+              Action
+            </th>
+            <mat-cell *matCellDef="let row">
+              <button mat-icon-button>
+                <mat-icon>edit</mat-icon>
+              </button>
+        <button mat-icon-button (click)="onDelete(row.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+              </mat-cell>
+          </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+    </table>
+
+    
+</div>

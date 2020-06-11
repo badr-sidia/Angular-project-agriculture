@@ -1,0 +1,62 @@
+
+    <div class="single-product-details">
+        <!--<h2>{{data.title}}</h2>-->
+        <!--<h5> <del>$ 60.00</del> {{data.price}}</h5>
+        <p class="available-stock"><span> More than 20 available / <a href="#">8 sold </a></span><p>-->
+<h4>Short Description:</h4>
+<p>{{data.description}}. Nullam lacinia consectetur sagittis. Nam sed neque id eros fermentum dignissim quis at tortor. Nullam ultricies urna quis sem sagittis pharetra. Nam erat turpis, cursus in ipsum at,
+tempor imperdiet metus. In interdum id nulla tristique accumsan. Ut semper in quam nec pretium. Donec egestas finibus suscipit. Curabitur tincidunt convallis arcu. </p>
+<ul>
+<li>
+    <form [formGroup]="buyForm">
+<div class="form-group quantity-box">
+  <label class="control-label">Quantity</label>
+  <input class="form-control" value="0" min="0" max="20" type="number" #quantite>
+  <div class="row">
+    <div class="col-md-5 mb-3">
+        <label for="country">Country *</label>
+        <select class="wide w-100" id="country">
+<option value="Choose..." data-display="Select">Choose...</option>
+<option value="United States">Tunisia</option>
+</select>
+        <div class="invalid-feedback"> Please select a valid country. </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="state">State *</label>
+        <select class="wide w-100" id="state" #adresse>
+<option data-display="Select">Choose...</option>
+<option>Sousse</option>
+<option>Monastir</option>
+<option>Mahdia</option>
+<option>Tunis</option>
+<option>Sfax</option>
+</select>
+<input type="hidden"   value="{{localStorage.getItem('userId')}}" formControlName="userId">  
+    </div>
+    
+</div>
+</div>
+</form>
+</li>
+</ul>
+
+<div class="price-box-bar">
+<div class="cart-and-bay-btn">
+<button class="btn btn-primary" data-fancybox-close="" (click)="ondate(quantite.value,adresse.value,data.price,data.title,data.type)" >Buy New</button>
+<button class="btn btn-primary" data-fancybox-close="" >Add to cart</button>
+</div>
+</div>
+
+<div class="add-to-btn">
+
+<div class="share-bar">
+<a class="btn hvr-hover" href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+<a class="btn hvr-hover" href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
+<a class="btn hvr-hover" href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+<a class="btn hvr-hover" href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+<a class="btn hvr-hover" href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+</div>
+</div>
+    </div>
+    
+

@@ -1,0 +1,22 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .img{
+    width: 400px;
+    height:210px
+  }
+  .example-header-image {
+    background-image: url('apple-touch-icon.png');
+    background-size: cover;
+  }
+  .is-even{
+    background: lightgray;
+  }
+  .is-odd{
+    background: lightcyan;
+  }
+  .example-card {
+    max-width: 400px;
+  }

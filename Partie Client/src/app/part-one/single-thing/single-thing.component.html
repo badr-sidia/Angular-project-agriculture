@@ -1,0 +1,478 @@
+<!--<mat-spinner *ngIf="loading"></mat-spinner>-->
+<!--<div *ngIf="!loading">
+  <header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+        <div class="container">
+    
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+                <a class="navbar-brand" href="index.html"><img src="assets/images1/logo.png" class="logo" alt=""></a>
+            </div>
+    
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                        <ul class="dropdown-menu">
+            <li><a href="shop.html">Sidebar Shop</a></li>
+            <li><a href="shop-detail.html">Shop Detail</a></li>
+                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="my-account.html">My Account</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="attr-nav">
+                <ul>
+                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                    <li class="side-menu"><a href="#">
+        <i class="fa fa-shopping-bag"></i>
+                        <span class="badge">3</span>
+          <p>My Cart</p>
+      </a></li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="side">
+            <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+            <li class="cart-box">
+                <ul class="cart-list">
+                    <li>
+                        <a href="#" class="photo"><img src="assets/images1/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                        <h6><a href="#">Delica omtantur </a></h6>
+                        <p>1x - <span class="price">$80.00</span></p>
+                    </li>
+                    <li>
+                        <a href="#" class="photo"><img src="assets/images1/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                        <h6><a href="#">Omnes ocurreret</a></h6>
+                        <p>1x - <span class="price">$60.00</span></p>
+                    </li>
+                    <li>
+                        <a href="#" class="photo"><img src="assets/images1/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                        <h6><a href="#">Agam facilisis</a></h6>
+                        <p>1x - <span class="price">$40.00</span></p>
+                    </li>
+                    <li class="total">
+                        <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                        <span class="float-right"><strong>Total</strong>: $180.00</span>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        
+    </nav>
+
+</header>
+
+<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Shop Detail</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                    <li class="breadcrumb-item active">Shop Detail </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="shop-detail-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 col-md-6">
+                <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active"> <img class="d-block w-100 img1" [src]="thing1?.imageUrl" alt="First slide"> </div>
+                        <div class="carousel-item" *ngFor="let thing of stuff" > <img class="d-block w-100 img1" [src]="thing.imageUrl" alt="Second slide" *ngIf="thing.imageUrl!=thing1?.imageUrl"> </div>
+                        
+                    </div>
+                    <a class="carousel-control-prev" [routerLink]="['/part-four/thing', prev]" role="button" data-slide="prev"> 
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        <span class="sr-only">Previous</span> 
+      </a>
+                    <a class="carousel-control-next"  [routerLink]="['/part-four/thing', next]" role="button" data-slide="next"> 
+        <i class="fa fa-angle-right" aria-hidden ="true"></i> 
+        <span class="sr-only">Next</span> 
+      </a>
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-1" data-slide-to="0" class="active">
+                            <img class="d-block w-100 img-fluid" [src]="thing1?.imageUrl" alt="" />
+                        </li>
+                        <li data-target="#carousel-example-1" data-slide-to="1" *ngFor="let thing of stuff" >
+                            <img class="d-block w-100 img-fluid" [src]="thing.imageUrl" alt="" *ngIf="thing.imageUrl!=thing1?.imageUrl"/>
+                        </li>
+                        
+                    </ol>
+                </div>
+            </div>
+           
+                
+                <div class="col-xl-7 col-lg-7 col-md-6">
+            <app-detail [data]="thing1"></app-detail>
+            
+            </div>
+        </div>
+ 
+  <div class="row my-5" >
+    <div class="card card-outline-secondary my-4">
+      <div class="card-header">
+        <h2>Product Reviews</h2>
+      </div>
+      <div class="card-body">
+       
+        <div class="media mb-3" *ngFor="let vm of revu">
+          <div class="mr-2"> 
+            <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
+          </div>
+          <div class="media-body">
+            <p>{{vm.review}}</p>
+            <small class="text-muted">Posted by Anonymous on 3/1/18</small>
+          </div>
+          <hr>
+        </div>
+        
+        <div class="media mb-3" id="welcomeDiv"  style="display:none;">
+            
+            <div class="media-body">
+                <input type="text"  class="form-control" #review>
+              <small class="text-muted">Posted by Anonymous on 3/1/18</small>
+              <input type="button"  value="send review" (click)="onReview(review.value,thing1?.id)" />
+            </div>
+          </div>
+        <hr>
+        <input type="button" name="answer" value="Leave review" onclick="showDiv()" />
+      </div>
+      </div>
+  </div>
+  
+        <div class="row my-5">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>Featured Products</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                </div>
+                <div class="featured-products-box owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="assets/images1/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>Lorem ipsum dolor sit amet</h4>
+                                <h5> $9.79</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="assets/images1/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>Lorem ipsum dolor sit amet</h4>
+                                <h5> $9.79</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="assets/images1/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>Lorem ipsum dolor sit amet</h4>
+                                <h5> $9.79</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="assets/images1/img-pro-04.jpg" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>Lorem ipsum dolor sit amet</h4>
+                                <h5> $9.79</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="assets/images1/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>Lorem ipsum dolor sit amet</h4>
+                                <h5> $9.79</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="assets/images1/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>Lorem ipsum dolor sit amet</h4>
+                                <h5> $9.79</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="assets/images1/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>Lorem ipsum dolor sit amet</h4>
+                                <h5> $9.79</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="assets/images1/img-pro-04.jpg" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>Lorem ipsum dolor sit amet</h4>
+                                <h5> $9.79</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+  <!--<button class="btn btn-link" (click)="onGoBack()"><< Retour</button>
+  <div class="single-thing-pane">
+    <img [src]="thing?.imageUrl" alt="">
+    <div class="single-thing-info">
+      <h1>{{ thing?.title }}</h1>
+      <h2 class="single-thing-price">{{ thing?.price / 100 | currency:'EUR' }}</h2>
+      <p>{{ thing?.description }}</p>
+      <button class="btn btn-success m-1" (click)="onModify()" >Modifier</button>
+      <button class="btn btn-danger m-1" (click)="onDelete()" >Supprimer</button>
+    </div>
+  </div>
+
+</div>-->
+<div class="container"
+    fxLayout="column"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+    <div fxLayout="row"   fxLayoutGap="30px" *ngIf="thing1">
+        <div  fxFlex="40" [@visibility]="visibility" [hidden]="display==true">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>
+                <h3 *ngIf="thing1">{{thing1.title | uppercase}}</h3>
+              </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image class="img" src={{thing1.imageUrl}} alt={{thing1.title}}>
+            <mat-card-content>
+              <p>{{thing1.description}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button [routerLink]="['/part-four/thing', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
+              <button mat-button (click)="goBack()">BACK</button>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+              <span class="flex-spacer"></span>
+            <button mat-button [routerLink]="['/part-four/thing', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
+            </mat-card-actions>
+          </mat-card>
+      </div>
+     
+      <div [hidden]="thing1">
+        <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+      </div>
+<div fxFlex *ngIf="thing1" [@visibility]="visibility">
+    
+  
+    <div 
+     fxLayout="column"
+     fxLayoutGap="10px" style="padding: 0px;text-align: center;">
+<!--<p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p>-->
+<h3 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;text-decoration-line: underline;">Send us your Feedback</h3>
+  <div *ngIf="showElement" [@expand] style="padding: 0px;margin:0px">
+    <h3>Your Submission</h3>
+      <p>Author: {{feedbackServer.author}} </p>
+       <p>Review: {{feedbackServer.review}} </p>
+       <p>Rating: {{feedbackServer.rating}} </p>
+       <p>Date: {{feedbackServer.date}} </p>
+    </div>
+  <div [hidden]="display==true" >
+    <div fxFlex="70" >
+        
+        <div style="margin-top:0px;margin-left:50px;margin-right:50px;border:2px solid blueviolet">
+          <div class="card-header">
+            <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Product Reviews</h2>
+          </div>
+        <div class="card-body">
+        <div class="media mb-3" *ngFor="let rev of revu" >
+            <div class="mr-2"> 
+              <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
+            </div>
+            <div class="media-body">
+                <h6>{{rev.rating}} stars</h6>
+              <p>{{rev.review}}</p>
+              <small class="text-muted">{{rev.author}} {{rev.date | date:'MMMM d, y' }} </small>
+            </div>
+            
+            <hr>
+          </div>
+          </div>
+          </div>
+          </div>
+          <div fxFlex>
+    <form  novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()" style="border:2px solid blueviolet;padding: 10px ;width: 250px;">
+        
+      <p>
+        <mat-form-field class="full-width">
+          <input matInput  formControlName="author" placeholder="Name" type="text" required>
+          <mat-error *ngIf="formErrors.author">{{formErrors.author}}</mat-error>
+        </mat-form-field>
+       
+      </p>
+    
+      <table class="form-size">
+        <td>    
+          <mat-slider formControlName="rating" min="1" max="5" step="1" value="5" thumbLabel tickInterval="1"></mat-slider>
+        </td>
+        
+        </table>
+      <p>
+        <mat-form-field class="full-width">
+          <textarea matInput formControlName="review" placeholder="Your comment" rows=12 required></textarea>
+          <mat-error *ngIf="formErrors.review">{{formErrors.review}}</mat-error>
+        </mat-form-field>
+      </p>
+      <button type="submit"  [disabled]="feedbackForm.invalid" mat-button class="background-primary text-floral-white">Submit</button>
+    </form>
+    </div>
+    </div>
+    
+    <div *ngIf="load">
+        <h3>Submitting Form</h3>
+        <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+      </div>
+
+  
+</div>
+</div>
+
+</div>
+
+    <!--<mat-list fxLayout="column" *ngFor="let rev of revu" [hidden]="display==true">
+        <mat-list-item  >
+          
+          <h1 matLine>{{rev.review}}  </h1>
+         <h1  matLine> {{rev.rating}}stars</h1>
+         <h1  matLine>--{{rev.author}} {{rev.date | date:'MMMM d, y' }} </h1>
+        </mat-list-item>
+        <mat-list-item *ngIf="feedbackForm.valid">
+          <h1 matLine>{{feedbackForm.value.review}}</h1>
+          <h1 matLine>{{feedbackForm.value.rating}}stars</h1>
+          <h1 matLine>--{{feedbackForm.value.author}}</h1>
+         
+        </mat-list-item>
+      </mat-list>-->
+
+    <app-detail [data]="thing1"></app-detail>
+    
+</div>

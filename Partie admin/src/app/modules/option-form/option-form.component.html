@@ -1,0 +1,22 @@
+<div fxFlex fxFlexOffset="20px" class="form-size">
+    <h3>Send us your Option</h3>
+    <p>{{ optionForm.value | json }} {{ optionForm.status | json }}</p>
+  
+    <form novalidate [formGroup]="optionForm"  #fform="ngForm" (ngSubmit)="onSubmit()">
+      <p>
+        <!--<mat-form-field class="half-width">-->
+          <input matInput formControlName="name" placeholder="Name" type="text" required>
+        <!--</mat-form-field>-->
+        
+      </p>
+      
+      <button class="btn btn-success" type="button" (click)="filePicker.click()">Ajouter image</button>
+    <input type="file" #filePicker (change)="onImagePick($event)">
+    <div class="image-preview" *ngIf="imagePreview">
+      <img [src]="imagePreview" alt="">
+    </div>
+    <p><br>
+      <button type="submit" mat-button class="btn-primary">Submit</button></p>
+    </form>
+  
+  </div>

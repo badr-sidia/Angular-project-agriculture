@@ -118,4 +118,4 @@ import { LeaderComponent } from './part-three/leader/leader.component';
 })
 export class AppModule { }
 //comment
-//comment1s
+//comment1
